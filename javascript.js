@@ -7,19 +7,24 @@ else {
 }
 
 function computerSelect() {
-    let num = (Math.floor(Math.random() * 3)) + 1;
-    let computerChoice = "";
-    if(num === 1) {
-        computerChoice = "scissors";
-    }
-    else if(num === 2) {
-        computerChoice = "rock";
-    }
-    else {
-        computerChoice = "paper";
-    }
+    let computerChoices = ['rock', 'paper', 'scissors'];
 
-    return computerChoice;
+    return computerChoices[(Math.floor(Math.random() * 3))]; 
+    
+    
+    // let num = (Math.floor(Math.random() * 3)) + 1;
+    // let computerChoice = "";
+    // if(num === 1) {
+    //     computerChoice = "scissors";
+    // }
+    // else if(num === 2) {
+    //     computerChoice = "rock";
+    // }
+    // else {
+    //     computerChoice = "paper";
+    // }
+
+    // return computerChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
