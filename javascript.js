@@ -8,9 +8,7 @@ else {
 
 function computerSelect() {
     let computerChoices = ['rock', 'paper', 'scissors'];
-
     return computerChoices[(Math.floor(Math.random() * 3))]; 
-    
     
     // let num = (Math.floor(Math.random() * 3)) + 1;
     // let computerChoice = "";
