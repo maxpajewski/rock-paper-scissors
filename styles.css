@@ -15,11 +15,35 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Times New Roman', Times, serif;
 }
 
-
-
 .text-content {
     font-size: 32px;
     font-weight: 800;
     text-align: center;
     padding: 32px;
+}
+
+.ui-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F2937;
+}
+
+.player-comp-ui {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-comp-buttons {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.player-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
 }
