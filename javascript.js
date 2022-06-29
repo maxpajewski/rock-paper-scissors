@@ -44,27 +44,12 @@ function changeButtonScissors() {
 
 function computerSelect() {
     let computerChoices = ['rock', 'paper', 'scissors'];
-    if(computerChoices[(Math.floor(Math.random() * 3))] == 'rock') {
-        image1.classList.add('show-comp-selection');
-        setTimeout(() => {
-            image1.classList.remove('show-comp-selection');
-        }, 2000);
-        return 'rock';
-    }
-    else if(computerChoices[(Math.floor(Math.random() * 3))] == 'paper') {
-        image2.classList.add('show-comp-selection');
-        setTimeout(() => {
-            image2.classList.remove('show-comp-selection');
-        }, 2000);
-        return 'paper';
-    }
-    else {
-        image3.classList.add('show-comp-selection');
-        setTimeout(() => {
-            image3.classList.remove('show-comp-selection');
-        }, 2000);
-        return 'scissors';
-    }
+    return computerChoices[(Math.floor(Math.random() * 3))];
+        // image1.classList.add('show-comp-selection');
+        // setTimeout(() => {
+        //     image1.classList.remove('show-comp-selection');
+        // }, 2000);
+
 }
 
 const displayResult = document.querySelector('.results');
@@ -79,17 +64,17 @@ content1.classList.add('text-content');
 content1.textContent = "";
 wordOutput.appendChild(content1);
 
-const image1 = document.createElement('img');
-image1.src = './Icons/rock-white.png';
-document.querySelector('.user-comp-buttons2').appendChild(image1);
+const rockImage = document.createElement('img');
+rockImage.src = './Icons/rock-white.png';
+document.querySelector('.user-comp-buttons2').appendChild(rockImage);
 
-const image2 = document.createElement('img');
-image2.src = './Icons/paper-white.png';
-document.querySelector('.user-comp-buttons2').appendChild(image2);
+const paperImage = document.createElement('img');
+paperImage.src = './Icons/paper-white.png';
+document.querySelector('.user-comp-buttons2').appendChild(paperImage);
 
-const image3 = document.createElement('img');
-image3.src = './Icons/scissors-white.png';
-document.querySelector('.user-comp-buttons2').appendChild(image3);
+const scissorsImage = document.createElement('img');
+scissorsImage.src = './Icons/scissors-white.png';
+document.querySelector('.user-comp-buttons2').appendChild(scissorsImage);
 
 
 
@@ -98,51 +83,114 @@ function playRound(playerSelection, computerSelection) {
     if(playerSelection == "rock" && computerSelection == "rock") {
         content1.textContent = "It's a tie!";
         content.textContent = playerScore + " - " + computerScore;
+
+        document.getElementById('get-rock').style.cssText = "background-color: grey; opacity: 0.75";
+        rockImage.classList.add('show-comp-selection');
+        setTimeout(() => {
+            document.getElementById('get-rock').style.cssText = "background-color: #1F2937; opacity: 1";
+            rockImage.classList.remove('show-comp-selection');
+        }, 2000);
     }
     //computer win
     else if(playerSelection == "rock" && computerSelection == "paper") {
         content1.textContent = "Human loses! Paper beats rock.";
         computerScore++;
         content.textContent = playerScore + " - " + computerScore;
+
+        document.getElementById('get-rock').style.cssText = "background-color: red; opacity: 0.75";
+        paperImage.classList.add('comp-green');
+        setTimeout(() => {
+            document.getElementById('get-rock').style.cssText = "background-color: #1F2937; opacity: 1";
+            paperImage.classList.remove('comp-green');
+        }, 2000);
     }
     //human win
     else if(playerSelection == "rock" && computerSelection == "scissors") {
         content1.textContent = "Human wins! Rock beats scissors.";
         playerScore++;
         content.textContent = playerScore + " - " + computerScore;
+        
+        document.getElementById('get-rock').style.cssText = "background-color: green; opacity: 0.75";
+        scissorsImage.classList.add('comp-red');
+        setTimeout(() => {
+            document.getElementById('get-rock').style.cssText = "background-color: #1F2937; opacity: 1";
+            scissorsImage.classList.remove('comp-red');
+        }, 2000);
     }
     // human win
     else if(playerSelection == "paper" && computerSelection == "rock") {
         content1.textContent = "Human wins! Paper beats rock.";
         playerScore++;
         content.textContent = playerScore + " - " + computerScore;
+
+        document.getElementById('get-paper').style.cssText = "background-color: green; opacity: 0.75";
+        rockImage.classList.add('comp-red');
+        setTimeout(() => {
+            document.getElementById('get-paper').style.cssText = "background-color: #1F2937; opacity: 1";
+            rockImage.classList.remove('comp-red');
+        }, 2000);
     }
     // tie
     else if(playerSelection == "paper" && computerSelection == "paper") {
         content1.textContent = "It's a tie!";
         content.textContent = playerScore + " - " + computerScore;
+
+        document.getElementById('get-paper').style.cssText = "background-color: grey; opacity: 0.75";
+        paperImage.classList.add('show-comp-selection');
+        setTimeout(() => {
+            document.getElementById('get-paper').style.cssText = "background-color: #1F2937; opacity: 1";
+            paperImage.classList.remove('show-comp-selection');
+        }, 2000);
     }
     // computer win
     else if(playerSelection == "paper" && computerSelection == "scissors") {
         content1.textContent = "Human loses! Scissors beats paper.";
         computerScore++;
         content.textContent = playerScore + " - " + computerScore;
+
+        document.getElementById('get-paper').style.cssText = "background-color: red; opacity: 0.75";
+        scissorsImage.classList.add('comp-green');
+        setTimeout(() => {
+            document.getElementById('get-paper').style.cssText = "background-color: #1F2937; opacity: 1";
+            scissorsImage.classList.remove('comp-green');
+        }, 2000);
     }
     // computer win
     else if(playerSelection == "scissors" && computerSelection == "rock") {
         content1.textContent = "Human loses! Rock beats scissors.";
         computerScore++;
         content.textContent = playerScore + " - " + computerScore;
+
+        document.getElementById('get-scissors').style.cssText = "background-color: red; opacity: 0.75";
+        rockImage.classList.add('comp-green');
+        setTimeout(() => {
+            document.getElementById('get-scissors').style.cssText = "background-color: #1F2937; opacity: 1";
+            rockImage.classList.remove('comp-green');
+        }, 2000);
     }
     // human win
     else if(playerSelection == "scissors" && computerSelection == "paper") {
         content1.textContent =  "Human wins! Scissors beats paper.";
         playerScore++;
         content.textContent = playerScore + " - " + computerScore;
+
+        document.getElementById('get-scissors').style.cssText = "background-color: green; opacity: 0.75";
+        paperImage.classList.add('comp-red');
+        setTimeout(() => {
+            document.getElementById('get-scissors').style.cssText = "background-color: #1F2937; opacity: 1";
+            paperImage.classList.remove('comp-red');
+        }, 2000);
     }
     // tie
     else {
         content1.textContent = "It's a tie!";
+
+        document.getElementById('get-scissors').style.cssText = "background-color: grey; opacity: 0.75";
+        scissorsImage.classList.add('show-comp-selection');
+        setTimeout(() => {
+            document.getElementById('get-scissors').style.cssText = "background-color: #1F2937; opacity: 1";
+            scissorsImage.classList.remove('show-comp-selection');
+        }, 2000);
     }
 }
 

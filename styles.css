@@ -124,6 +124,20 @@ button:hover {
     border-radius: 4px;
 }
 
+.comp-green {
+    background-color: green;
+    opacity: 0.5;
+    border: 2px solid green; 
+    border-radius: 4px;
+}
+
+.comp-red {
+    background-color: red;
+    opacity: 0.5;
+    border: 2px solid red; 
+    border-radius: 4px;
+}
+
 
 
 
