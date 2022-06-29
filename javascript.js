@@ -1,28 +1,23 @@
-let choice = prompt("Would you like to play a game of Rock-Paper-Scissors? (Y or N)")
-if(choice == "Y") {
-    game();
-}
-else {
-    alert("Goodbye!");
-}
+let playerChoice = "";
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if(button.id == 'get-rock') {
+        playerChoice = 'rock';
+      }
+      else if(button.id == 'get-paper') {
+        playerChoice = 'paper';
+      }
+      else if(button.id == 'get-scissors') {
+        playerChoice = 'scissors'; 
+      }
+    });
+});
 
 function computerSelect() {
     let computerChoices = ['rock', 'paper', 'scissors'];
     return computerChoices[(Math.floor(Math.random() * 3))]; 
-    
-    // let num = (Math.floor(Math.random() * 3)) + 1;
-    // let computerChoice = "";
-    // if(num === 1) {
-    //     computerChoice = "scissors";
-    // }
-    // else if(num === 2) {
-    //     computerChoice = "rock";
-    // }
-    // else {
-    //     computerChoice = "paper";
-    // }
-
-    // return computerChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
