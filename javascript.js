@@ -7,16 +7,40 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
       if(button.id == 'get-rock') {
+        document.getElementById('get-rock').onclick = changeButtonRock();
         playRound('rock', computerSelect());
       }
       else if(button.id == 'get-paper') {
+        document.getElementById('get-rock').onclick = changeButtonPaper();
         playRound('paper', computerSelect());
       }
       else if(button.id == 'get-scissors') {
+        document.getElementById('get-rock').onclick = changeButtonScissors();
         playRound('scissors', computerSelect());
       }
     });
 });
+
+function changeButtonRock() {
+    document.getElementById('get-rock').style.cssText = "background-color: grey; opacity: 0.75";
+    setTimeout(() => {
+        document.getElementById('get-rock').style.cssText = "background-color: #1F2937; opacity: 1";
+    }, 2000);
+}
+
+function changeButtonPaper() {
+    document.getElementById('get-paper').style.cssText = "background-color: grey; opacity: 0.75";
+    setTimeout(() => {
+        document.getElementById('get-paper').style.cssText = "background-color: #1F2937; opacity: 1";
+    }, 2000);
+}
+
+function changeButtonScissors() {
+    document.getElementById('get-scissors').style.cssText = "background-color: grey; opacity: 0.75";
+    setTimeout(() => {
+        document.getElementById('get-scissors').style.cssText = "background-color: #1F2937; opacity: 1";
+    }, 2000);
+}
 
 function computerSelect() {
     let computerChoices = ['rock', 'paper', 'scissors'];

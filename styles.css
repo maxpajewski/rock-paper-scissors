@@ -113,10 +113,10 @@ button:hover {
     border: 2px solid white;
 }
 
-button:focus { 
+/* button:focus { 
     background-color: grey;
     opacity: 0.75;
-}
+} */
 
 .show-comp-selection {
     background-color: grey;
