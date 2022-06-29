@@ -24,7 +24,7 @@ buttons.forEach((button) => {
 function changeButtonRock() {
     document.getElementById('get-rock').style.cssText = "background-color: grey; opacity: 0.75";
     setTimeout(() => {
-        document.getElementById('get-rock').style.cssText = "background-color: #1F2937; opacity: 1";
+        document.getElementById('get-rock').style.cssText = "background-color: #1F2937; opacity: 1"; 
     }, 2000);
 }
 
