@@ -113,29 +113,17 @@ button:hover {
     border: 2px solid white;
 }
 
-.user-rock:focus { 
-    background-color: lightblue;
+button:focus { 
+    background-color: grey;
     opacity: 0.75;
-    background-image: url(./Icons/rock.png);
-}
-
-.user-paper:focus { 
-    background-color: lightblue;
-    opacity: 0.75;
-    background-image: url(./Icons/paper.png);
-}
-
-.user-scissors:focus { 
-    background-color: lightblue;
-    opacity: 0.75;
-    background-image: url(./Icons/scissors.png);
 }
 
 .show-comp-selection {
-    background-color: lightblue;
+    background-color: grey;
     opacity: 0.75;
     border-radius: 4px;
 }
+
 
 
 
