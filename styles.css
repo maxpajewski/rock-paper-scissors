@@ -138,6 +138,14 @@ button:hover {
     border-radius: 4px;
 }
 
+#human-outcome {
+    color: white;
+}
+
+#computer-outcome {
+    color: white;
+}
+
 
 
 
