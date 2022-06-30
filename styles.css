@@ -140,10 +140,12 @@ button:hover {
 
 #human-outcome {
     color: white;
+    transition-duration: 0.4s;
 }
 
 #computer-outcome {
     color: white;
+    transition-duration: 0.4s;
 }
 
 
